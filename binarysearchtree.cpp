@@ -76,9 +76,23 @@ public:
         }
         if (ptr != NULL)
         {
-            inorder(ptr->leftchild);
-            cout << ptr->info << " ";
-            inorder(ptr->rightchild);
+            inorder(ptr->leftchild); // LEFT
+            cout << ptr->info << " "; // ROOT
+            inorder(ptr->rightchild); // RIGHT
+        }
+    }
+
+    void preorder(Node* ptr)
+    {
+        if (ROOT == NULL)
+        {
+            cout << "Tree is empty" << endl;
+        }
+        if (ptr != NULL)
+        {
+            cout << ptr->info << " "; // ROOT
+            preorder(ptr->leftchild); // LEFT
+            preorder(ptr->rightchild); // RIGHT
         }
     }
 };
